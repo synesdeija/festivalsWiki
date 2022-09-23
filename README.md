@@ -6,7 +6,7 @@ A wiki for your festivals!
 
 ## Configuration
 
-## initial run
+## Initial run
 
 **Assumes the user has a [Cloudinary](cloudinary.com) account**
 
