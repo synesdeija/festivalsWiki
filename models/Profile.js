@@ -26,3 +26,5 @@ const ProfileSchema = new mongoose.Schema({
         require: true,
     },
 });
+
+module.exports = mongoose.model("Profile", ProfileSchema);
