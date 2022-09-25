@@ -37,6 +37,19 @@ module.exports = {
         }
     },
 
+    likeComment: async(req, res) => {
+        try {
+            const comment = await Comment.findById({ _id: req.params.id });
+            await Comment.findOneAndUpdate({ _id: req.params.id }, {
+                $inc: { likes: 1 },
+            });
+            console.log("Likes +1");
+            res.redirect(`/event/${req.params.eventId}`);
+        } catch (err) {
+            console.log(err);
+        }
+    },
+
     deleteComment: async(req, res) => {
         try {
             // Find comment by id
