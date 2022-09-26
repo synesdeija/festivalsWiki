@@ -47,7 +47,7 @@ module.exports = {
                 cloudinaryId: result.public_id,
                 caption: req.body.caption,
                 likes: 0,
-                user: req.user.id,
+                user: req.user,
             });
             console.log("Event has been added!");
             res.redirect("/profile");
