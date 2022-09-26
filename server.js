@@ -30,6 +30,18 @@ app.use(express.static("public"));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
+
+//Tailwind and Pug requirements
+const path = require('path');
+
+app.get('/', (req, res) => {
+    res.render('index');
+});
+
+app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'pug');
+app.set(express.static(path.join(__dirname, 'public')));
+
 //Logging
 app.use(logger("dev"));
 
