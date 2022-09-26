@@ -35,18 +35,19 @@ module.exports = {
             const result = await cloudinary.uploader.upload(req.file.path);
 
             await Event.create({
-                eventName: req.body.eventNames,
-                fanName: req.body.fanNames,
-                type: request.body.typeS,
-                venue: request.body.venueS,
-                location: request.body.locationS,
-                setCount: request.body.setCountS,
-                dates: request.body.datesS,
+                eventName: req.body.eventName,
+                fanName: req.body.fanName,
+                type: req.body.type,
+                venue: req.body.venue,
+                location: req.body.location,
+                setCount: req.body.setCount,
+                startDate: req.body.startDate,
+                endDate: req.body.endDate,
                 image: result.secure_url,
                 cloudinaryId: result.public_id,
                 caption: req.body.caption,
                 likes: 0,
-                user: req.user.id,
+                user: req.user,
             });
             console.log("Event has been added!");
             res.redirect("/profile");
@@ -69,7 +70,7 @@ module.exports = {
         try {
             // Find event by id
             let event = await Event.findById({ _id: req.params.id });
-            // Delete image from cloudinary
+            // Delete image from cloudinary, if an image exists
             await cloudinary.uploader.destroy(event.cloudinaryId);
             // Delete event from db
             await Event.remove({ _id: req.params.id });

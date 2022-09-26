@@ -9,7 +9,7 @@ const EventSchema = new mongoose.Schema({
         type: String,
         required: false,
     },
-    eventType: {
+    type: {
         type: String,
         required: true,
     },
@@ -25,7 +25,11 @@ const EventSchema = new mongoose.Schema({
         type: Number,
         required: true,
     },
-    dateRange: {
+    startDate: {
+        type: Date,
+        required: true,
+    },
+    endDate: {
         type: Date,
         required: true,
     },
@@ -39,7 +43,7 @@ const EventSchema = new mongoose.Schema({
     },
     caption: {
         type: String,
-        required: true,
+        required: false,
     },
     likes: {
         type: Number,

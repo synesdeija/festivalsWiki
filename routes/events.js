@@ -7,7 +7,7 @@ const { ensureAuth, ensureGuest } = require("../middleware/auth");
 //Post Routes - simplified for now
 router.get("/:id", ensureAuth, eventsController.getEvent);
 
-router.post("/createEvent", upload.single("file"), eventsController.createEvent);
+router.post("/createEvent",  upload.single("file"), eventsController.createEvent);
 
 router.put("/likeEvent/:id", eventsController.likeEvent);
 
