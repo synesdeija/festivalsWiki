@@ -11,6 +11,7 @@ const connectDB = require("./config/database");
 const mainRoutes = require("./routes/main");
 const eventRoutes = require("./routes/events");
 const commentRoutes = require("./routes/comments");
+const path = require("path");
 //Use .env file in config folder
 require("dotenv").config({ path: "./config/.env" });
 
@@ -30,6 +31,16 @@ app.use(express.static("public"));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
+//Tailwind and Pug requirements
+
+app.get("/", (req, res) => {
+  res.render("index.ejs");
+});
+
+app.set("views", path.join(__dirname, "views"));
+app.set("view engine", "pug");
+app.set(express.static(path.join(__dirname, "public")));
+
 //Logging
 app.use(logger("dev"));
 
@@ -38,12 +49,12 @@ app.use(methodOverride("_method"));
 
 // Setup Sessions - stored in MongoDB
 app.use(
-    session({
-        secret: "keyboard cat",
-        resave: false,
-        saveUninitialized: false,
-        store: new MongoStore({ mongooseConnection: mongoose.connection }),
-    })
+  session({
+    secret: "keyboard cat",
+    resave: false,
+    saveUninitialized: false,
+    store: new MongoStore({ mongooseConnection: mongoose.connection }),
+  })
 );
 
 // Passport middleware
@@ -60,5 +71,5 @@ app.use("/comment", commentRoutes);
 
 //Server Running
 app.listen(process.env.PORT, () => {
-    console.log("Server is running, you better catch it!");
+  console.log("Server is running, you better catch it!");
 });

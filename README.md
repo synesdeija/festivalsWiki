@@ -2,8 +2,6 @@
 
 A wiki for your festivals!
 
-
-
 ## Configuration
 
 ## Initial run
