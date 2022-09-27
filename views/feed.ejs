@@ -10,6 +10,19 @@
             </a>
          </li>
          <% } %>
+         <ul>
+            <% events.forEach((event)=> { %>
+                <li>
+                    <h2>
+                        <%= event.fanName %>
+                    </h2>
+                    <p>
+                        <%= event.eventName %>
+                    </p>
+                </li>
+                <hr />
+            <% }) %>
+        </ul>
       </ul>
    </div>
 </div>
