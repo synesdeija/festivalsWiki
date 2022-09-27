@@ -1,90 +1,79 @@
 <%- include('partials/header') -%>
-    <div class="container">
-        <div class="row mt-5">
-            <div class="col-6">
-                <div>
-                    <p><strong>Username</strong>:
-                        <%= user.userName %>
-                    </p>
-                    <p><strong>Email</strong>:
-                        <%= user.email %>
-                    </p>
-                    <a href="/logout" class="col-3 btn btn-primary">Logout</a>
-                </div>
-                <div class="mt-5">
-                    <h2>Add an event:</h2>
-                    <p></p>
-
-                    <form action="/event/createEvent" enctype="multipart/form-data" method="POST">
-
-                        <div class="mb-3">
-                            <label for="eventName" class="form-label">Official Event Name</label>
-                            <input type="text" class="form-control" id="eventName" name="eventName">
-                        </div>
-
-                        <div class="mb-3">
-                            <label for="fanName" class="form-label">Fan Name or Nickname (you choose!)</label>
-                            <input type="text" class="form-control" id="fanName" name="fanName">
-                        </div>
-
-                        <div class="mb-3">
-                            <label for="type" class="form-label">Event Type (i.e. indoor, outdoor, or theater)</label>
-                            <input type="text" class="form-control" id="type" name="type">
-                        </div>
-
-                        <div class="mb-3">
-                            <label for="venue" class="form-label">Venue</label>
-                            <input type="text" class="form-control" id="venue" name="venue">
-                        </div>
-
-                        <div class="mb-3">
-                            <label for="location" class="form-label">Location (City, State)</label>
-                            <input type="text" class="form-control" id="location" name="location">
-                        </div>
-
-                        <div class="mb-3">
-                            <label for="setCount" class="form-label">Set Count (how many sets did Dave play? how many did you actually catch?)</label>
-                            <input type="text" class="form-control" id="setCount" name="setCount">
-                        </div>
-
-                        <div class="mb-3">
-                            <label for="startDate" class="form-label">First day of event:</label>
-                            <input type="date" value="2019-04-19" class="form-control" id="startDate" name="startDate">
-                        </div>
-
-                        <div class="mb-3">
-                            <label for="endDate" class="form-label">Last day of event:</label>
-                            <input type="date" value="2019-04-20" class="form-control" id="endDate" name="endDate">
-                        </div>
-
-                        <div class="mb-3">
-                            <label for="caption" class="form-label">Notes</label>
-                            <textarea class="form-control" id="caption" name="caption"></textarea>
-                        </div>
-
-                        <div class="mb-3">
-                            <label for="imgUpload" class="form-label">Choose one image to summarize your experience:</label>
-                            <input type="file" class="form-control" id="file" name="file">
-                        </div>
-                        <button type="submit" class="btn btn-primary" value="Upload">Submit</button>
-                    </form>
-                </div>
-            </div>
-            <div class="col-6">
-                <ul class="row list-unstyled">
-                    <% for(let i=0; i<events.length; i++) {%>
-                        <li class="col-6 justify-content-between mt-5">
-                            <a href="/event/<%= events[i]._id%>">
-              <img class="img-fluid" src="<%= events[i].image%>">
-            </a>
-                        </li>
-                        <% } %>
-                </ul>
-                <div class="row justify-content-center mt-5">
-                    <a class="btn btn-primary" href="/feed">Return to Feed</a>
-                </div>
-            </div>
-        </div>
-    </div>
-    </div>
-    <%- include('partials/footer') -%>
+<div class="container">
+   <div class="row mt-5">
+      <div class="col-6">
+         <div>
+            <p><strong>Username</strong>:
+               <%= user.userName %>
+            </p>
+            <p><strong>Email</strong>:
+               <%= user.email %>
+            </p>
+            <a href="/logout" class="col-3 btn btn-primary">Logout</a>
+         </div>
+         <div class="mt-5">
+            <h2>Add an event:</h2>
+            <p></p>
+            <form action="/event/createEvent" enctype="multipart/form-data" method="POST">
+               <div class="mb-3">
+                  <label for="eventName" class="form-label">Official Event Name</label>
+                  <input type="text" class="form-control" id="eventName" name="eventName">
+               </div>
+               <div class="mb-3">
+                  <label for="fanName" class="form-label">Fan Name or Nickname (you choose!)</label>
+                  <input type="text" class="form-control" id="fanName" name="fanName">
+               </div>
+               <div class="mb-3">
+                  <label for="type" class="form-label">Event Type (i.e. indoor, outdoor, or theater)</label>
+                  <input type="text" class="form-control" id="type" name="type">
+               </div>
+               <div class="mb-3">
+                  <label for="venue" class="form-label">Venue</label>
+                  <input type="text" class="form-control" id="venue" name="venue">
+               </div>
+               <div class="mb-3">
+                  <label for="location" class="form-label">Location (City, State)</label>
+                  <input type="text" class="form-control" id="location" name="location">
+               </div>
+               <div class="mb-3">
+                  <label for="setCount" class="form-label">Set Count (how many sets did Dave play? how many did you actually catch?)</label>
+                  <input type="text" class="form-control" id="setCount" name="setCount">
+               </div>
+               <div class="mb-3">
+                  <label for="startDate" class="form-label">First day of event:</label>
+                  <input type="date" value="2019-04-19" class="form-control" id="startDate" name="startDate">
+               </div>
+               <div class="mb-3">
+                  <label for="endDate" class="form-label">Last day of event:</label>
+                  <input type="date" value="2019-04-20" class="form-control" id="endDate" name="endDate">
+               </div>
+               <div class="mb-3">
+                  <label for="caption" class="form-label">Notes</label>
+                  <textarea class="form-control" id="caption" name="caption"></textarea>
+               </div>
+               <div class="mb-3">
+                  <label for="imgUpload" class="form-label">Choose one image to summarize your experience:</label>
+                  <input type="file" class="form-control" id="file" name="file">
+               </div>
+               <button type="submit" class="btn btn-primary" value="Upload">Submit</button>
+            </form>
+         </div>
+      </div>
+      <div class="col-6">
+         <ul class="row list-unstyled">
+            <% for(let i=0; i<events.length; i++) {%>
+            <li class="col-6 justify-content-between mt-5">
+               <a href="/event/<%= events[i]._id%>">
+               <img class="img-fluid" src="<%= events[i].image%>">
+               </a>
+            </li>
+            <% } %>
+         </ul>
+         <div class="row justify-content-center mt-5">
+            <a class="btn btn-primary" href="/feed">Return to Feed</a>
+         </div>
+      </div>
+   </div>
+</div>
+</div>
+<%- include('partials/footer') -%>
