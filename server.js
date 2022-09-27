@@ -11,6 +11,7 @@ const connectDB = require("./config/database");
 const mainRoutes = require("./routes/main");
 const eventRoutes = require("./routes/events");
 const commentRoutes = require("./routes/comments");
+const path = require('path');
 //Use .env file in config folder
 require("dotenv").config({ path: "./config/.env" });
 
@@ -32,10 +33,10 @@ app.use(express.json());
 
 
 //Tailwind and Pug requirements
-const path = require('path');
+
 
 app.get('/', (req, res) => {
-    res.render('index');
+    res.render('index.ejs');
 });
 
 app.set('views', path.join(__dirname, 'views'));
