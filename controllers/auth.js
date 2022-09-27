@@ -6,7 +6,7 @@ exports.getLogin = (req, res) => {
   if (req.user) {
     return res.redirect("/profile");
   }
-  res.render("login", {
+  res.render("login.ejs", {
     title: "Login",
   });
 };
@@ -46,7 +46,7 @@ exports.postLogin = (req, res, next) => {
 
 exports.logout = (req, res) => {
   req.logout(function(err) {
-    if (err) {  console.log(err)} 
+    if (err) {  console.log(err) }
 
     req.session.destroy(function(err) {
       if (err) { console.log(err)} });
@@ -58,7 +58,7 @@ exports.getSignup = (req, res) => {
   if (req.user) {
     return res.redirect("/profile");
   }
-  res.render("signup", {
+  res.render("signup.ejs", {
     title: "Create Account",
   });
 };
