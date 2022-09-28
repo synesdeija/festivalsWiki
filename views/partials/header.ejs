@@ -97,11 +97,13 @@
       <script>
 
       const menuX = document.querySelector('#menuX');
-      const closeMenu = document.querySelector('#menuX + #mobileMenu.hidden');
+      const closeMenu = document.querySelector('#mobileMenu.hidden');
+      const mobileMenu = document.getElementById("mobileMenu")
       
       menuX.addEventListener("click", () => {
          console.log('YEEEEET')
-        closeMenu.classList.toggle('hidden');
+         console.log(mobileMenu)
+         mobileMenu.toggle('hidden');
       });
 
 
