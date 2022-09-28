@@ -18,23 +18,32 @@
          <% } %>
          <form action="/signup" method="POST">
             <div class="mb-3">
-               <label for="userName" class="form-label">Username</label>
-               <input type="text" class="form-control" id="userName" name="userName">
+
+               <label for="userName" class="form-label">Choose a Username</label><input type="text" placeholder="Type here" class="input w-full max-w-xs" id="userName" name="userName">
+
             </div>
             <div class="mb-3">
-               <label for="exampleInputEmail1" class="form-label">Email address</label>
-               <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="email">
-               <div id="emailHelp" class="form-text">We'll never, ever share your email with anyone else.</div>
+
+               <label for="exampleInputEmail1" class="form-label">Your Email</label>
+               <input type="email" placeholder="Type here" class="input w-full max-w-xs" id="inputEmailSignup" name="email">
+
+               <div id="emailHelp" class="form-text">We'll never, ever share your email with anyone else.<i class="fa-light fa-hand-fingers-crossed"></i></div>
+
             </div>
             <div class="mb-3">
-               <label for="password" class="form-label">Password</label>
-               <input type="password" class="form-control" id="password" name="password">
+
+               <label for="password" class="form-label">Create a Password</label>
+               <input type="password" placeholder="Type here" class="input w-full max-w-xs" id="password" name="password">
+
             </div>
             <div class="mb-3">
-               <label for="confirmPassword" class="form-label">Confirm Password</label>
-               <input type="password" class="form-control" id="confirmPassword" name="confirmPassword">
+
+               <label for="confirmPassword" class="form-label">Type that Password in Again</label>
+               <input type="password" placeholder="Type here" class="input w-full max-w-xs" id="confirmPassword" name="confirmPassword">
             </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
+
+            <button type="submit" class="relative inline-flex items-center justify-center p-0.5 mb-2 mr-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-purple-600 to-blue-500 group-hover:from-purple-600 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 elative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">Submit</button>
+       
          </form>
       </section>
    </div>
