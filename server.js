@@ -53,7 +53,9 @@ app.use(
     secret: "keyboard cat",
     resave: false,
     saveUninitialized: false,
-    store: MongoStore.create({ client: mongoose.connection.getClient() }),  })
+    store: MongoStore.create({ client: mongoose.connection.getClient() 
+    }),
+    })
 );
 
 // Passport middleware
