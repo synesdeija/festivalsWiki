@@ -1,11 +1,12 @@
 const express = require("express");
 const router = express.Router();
 const upload = require("../middleware/multer");
-const eventsController = require("../controllers/events");
+const eventsController = require("../controllers/event");
 const { ensureAuth, ensureGuest } = require("../middleware/auth");
 
 //Post Routes - simplified for now
-router.get("/:id", ensureAuth, eventsController.getEvent);
+// router.get("/:id", ensureAuth, eventsController.getEvent);
+router.get("/createEvent", eventsController.getCreateEventPage);
 
 router.post(
   "/createEvent",
