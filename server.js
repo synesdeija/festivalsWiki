@@ -34,7 +34,7 @@ app.use(express.json());
 //Tailwind requirements
 
 app.get("/", (req, res) => {
-  res.render("index.ejs");
+  res.render("index.ejs", {user: req.user});
 });
 
 app.set("views", path.join(__dirname, "views"));
