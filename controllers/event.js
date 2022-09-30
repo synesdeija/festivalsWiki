@@ -12,6 +12,7 @@ module.exports= {
     } else {
       res.render("login.ejs", {
         title: "Login",
+        user: req.user
       });
     }
   },

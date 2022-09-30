@@ -8,6 +8,7 @@ exports.getLogin = (req, res) => {
   }
   res.render("login.ejs", {
     title: "Login",
+    user: req.user
   });
 };
 
@@ -60,6 +61,7 @@ exports.getSignup = (req, res) => {
   }
   res.render("signup.ejs", {
     title: "Create Account",
+    user: null
   });
 };
 
