@@ -8,7 +8,7 @@ const path=require("path");
 module.exports= {
   getCreateEventPage: async(req, res) => {
     if (req.user) {
-      res.render("createEvent.ejs"), {user: req.user};
+      res.render("createEvent.ejs", {user: req.user});
     } else {
       res.render("login.ejs", {
         title: "Login",
