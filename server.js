@@ -31,14 +31,14 @@ app.use(express.static("public"));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-//Tailwind and Pug requirements
+//Tailwind requirements
 
 app.get("/", (req, res) => {
   res.render("index.ejs");
 });
 
 app.set("views", path.join(__dirname, "views"));
-app.set("view engine", "pug");
+
 app.set(express.static(path.join(__dirname, "public")));
 
 //Logging
@@ -75,3 +75,4 @@ app.listen(process.env.PORT, () => {
   console.log("Server is running, you better catch it!");
 
 });
+
