@@ -3,14 +3,15 @@
    <div class="row mt-5">
       <div class="col-6">
          <div>
-            <p><strong>Heya,</strong>:
+            <p><strong>Heya,</strong>
                <%= user.userName %>
             </p>
-            <p><strong>Email:</strong>:
+            <p><strong>Email:</strong>
                <%= user.email %>
             </p>
-            <a href="/logout" class="relative inline-flex items-center justify-center p-0.5 mb-2 mr-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-purple-600 to-blue-500 group-hover:from-purple-600 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 elative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">Logout</a>
             
+            
+            <a href="/feed" class="relative inline-flex items-center justify-center p-0.5 mb-2 mr-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-purple-600 to-blue-500 group-hover:from-purple-600 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 elative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">Return to Feed</a>
             
 
          </div>
@@ -26,10 +27,23 @@
                   <label for="fanName" class="form-label">Fan Name or Nickname (you choose!)</label>
                   <input type="text" class="form-control" id="fanName" name="fanName">
                </div>
-               <div class="mb-3">
+
+
+               <!-- <div class="mb-3">
                   <label for="type" class="form-label">Event Type (i.e. indoor, outdoor, or theater)</label>
                   <input type="text" class="form-control" id="type" name="type">
-               </div>
+               </div> -->
+
+
+               <div class="mb-3 dropdown dropdown-hover" style="">
+                  <label tabindex="0" class="btn m-1">Event Type:</label>
+                  <ul tabindex="0" class="dropdown-content menu p-2 shadow rounded-box w-52 bg-white">
+                    <li><a>Indoor</a></li>
+                    <li><a>Outdoor</a></li>
+                    <li><a>Theater</a></li>
+                  </ul>
+                </div>
+
                <div class="mb-3">
                   <label for="venue" class="form-label">Venue</label>
                   <input type="text" class="form-control" id="venue" name="venue">
@@ -72,9 +86,7 @@
             </li>
             <% } %>
          </ul>
-         <div class="row justify-content-center mt-5">
-            <a href="/feed" class="relative inline-flex items-center justify-center p-0.5 mb-2 mr-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-purple-600 to-blue-500 group-hover:from-purple-600 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 elative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">Return to Feed</a>
-         </div>
+         
       </div>
    </div>
 </div>
