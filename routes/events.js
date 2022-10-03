@@ -5,7 +5,7 @@ const eventsController = require("../controllers/event");
 const { ensureAuth, ensureGuest } = require("../middleware/auth");
 
 //Post Routes - simplified for now
-router.get("/:id", ensureAuth, eventsController.getEvent);
+
 router.get("/createEvent", eventsController.getCreateEventPage);
 
 router.post(
@@ -17,5 +17,7 @@ router.post(
 router.put("/likeEvent/:id", eventsController.likeEvent);
 
 router.delete("/deleteEvent/:id", eventsController.deleteEvent);
+
+router.get("/:id", ensureAuth, eventsController.getEvent);
 
 module.exports = router;

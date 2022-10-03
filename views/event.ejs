@@ -1,31 +1,52 @@
 <%- include('partials/header') -%>
 <div class="container">
+
 <div class="row justify-content-center mt-5">
-<div class="col-6">
+<div class="col-8">
    <h2>
-      <%=Event.fanName %>
+      <%=event.eventName %>
    </h2>
+
+      <h4>"<%=event.nickName %>"
+      </h4>
+   
    <img class="img-fluid" src="<%= event.image%>" />
    <div class="row justify-content-between">
       <form class="col-1" action="/event/likeEvent/<%= event.id %>?_method=PUT" method="POST">
-         <button class="btn btn-primary fa fa-heart" type="submit"></button>
+         <button class="btn py-2 fa-regular fa-hand-heart fa-xl" style="color:rgb(99 102 241)" type="submit">Went?</button>
       </form>
-      <h3 class="col-3">Likes:
-         <%=event.likes %>
-      </h3>
+      
       <%if(event.user == user.id){ %>
       <form action="/event/deleteEvent/<%= event.id %>?_method=DELETE" method="POST" class="col-3">
-         <button class="btn btn-primary fa fa-trash" type="submit"></button>
+
+         <button class="btn btn-outline py-2 fa-sharp fa-solid fa-trash" style="color:rgb(99 102 241)" type="submit"></button>
       </form>
       <%}%>
    </div>
+   <div>
+   <h6 class="py-10 row justify-end">Attendees:
+      <%=event.likes %>
+   </h6>
+   <%if(event.user == user.id){ %>
+      <form
+        action="/event/deleteEvent/<%= event.id %>?_method=DELETE"
+        method="POST"
+        class="col-3"
+      >
+        <button class="btn fa-sharp fa-solid fa-trash" style="color:rgb(99 102 241)" type="submit"></button>
+      </form>
+      <%}%>
+</div>
+<div class="col-3 mt-5">
+   <p><%= event.caption %></p>
+ </div>
    <div class="mt-5">
       <h2>Leave a Comment: </h2>
-      <form action="/comment/createComment/<%= event.id%>" method="POST">
+      <form action="/comment/createComment/<%= event._id%>" method="POST">
          <div class="mb-3">
             <label for="comment" class="form-label">Comment</label>
             <input type="text" class="form-control" id="comment" name="comment">
-            <button type="submit" class="btn btn-primary" value="Upload">Submit</button>
+            <button type="submit" class="btn fa-regular fa-comment-smile" style="color:rgb(99 102 241)"> Submit</button>
       </form>
       </div>
    </div>
@@ -33,10 +54,10 @@
       <ul class="row list-unstyled">
          <% for(var i=0; i<comments.length; i++) {%>
          <li class="col-6 justify-content-between mt-5">
-            <%= comments[0].comment %>
-            <%if(comments[i].user._id == user.id){ %>
+            <%= comments[i].comment %>
+            <%if(comments[i].comment == user.id){ %>
             <form action="/comment/deleteComment/<%= comments[i]._id %>?_method=DELETE" method="POST" class="col-3">
-               <button class="btn btn-primary fa fa-trash" type="submit"></button>
+               <button class="btn  py-2 fa-sharp fa-regular fa-trash" style="color:rgb(99 102 241)" type="submit">trash comment</button>
             </form>
             <% } %>
          </li>
@@ -44,8 +65,48 @@
       </ul>
    </div>
    <div class="col-6 mt-5">
-      <a class="btn btn-primary" href="/profile">Return to Profile</a>
-      <a class="btn btn-primary" href="/feed">Return to Feed</a>
+      <a class="btn fa-solid fa-head-side-brain" style="color:rgb(99 102 241)" href="/profile">Profile</a>
+      <a class="btn fa-regular fa-album-collection" style="color:rgb(99 102 241)" href="/feed">Library</a>
    </div>
 </div>
 <%- include('partials/footer') -%>
+
+
+
+<!-- table:
+<div class="overflow-x-auto">
+   <table class="table table-zebra w-full">
+     <!-- head -->
+     <thead>
+       <tr>
+         <th></th>
+         <th>Name</th>
+         <th>Job</th>
+         <th>Favorite Color</th>
+       </tr>
+     </thead>
+     <tbody>
+       <!-- row 1 -->
+       <tr>
+         <th>1</th>
+         <td>Cy Ganderton</td>
+         <td>Quality Control Specialist</td>
+         <td>Blue</td>
+       </tr>
+       <!-- row 2 -->
+       <tr>
+         <th>2</th>
+         <td>Hart Hagerty</td>
+         <td>Desktop Support Technician</td>
+         <td>Purple</td>
+       </tr>
+       <!-- row 3 -->
+       <tr>
+         <th>3</th>
+         <td>Brice Swyre</td>
+         <td>Tax Accountant</td>
+         <td>Red</td>
+       </tr>
+     </tbody>
+   </table>
+ </div> -->

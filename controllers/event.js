@@ -2,11 +2,11 @@
 const cloudinary = require("../middleware/cloudinary");
 const Event = require("../models/Event");
 const Comment = require("../models/Comment");
-const path=require("path");
+// const path=require("path");
 
 
 module.exports= {
-  getCreateEventPage: async(req, res) => {
+  getCreateEventPage: async (req, res) => {
     if (req.user) {
       res.render("createEvent.ejs", {user: req.user});
     } else {
@@ -23,7 +23,7 @@ module.exports= {
 
       await Event.create({
         eventName: req.body.eventName,
-        fanName: req.body.fanName,
+        nickName: req.body.nickName,
         type: req.body.type,
         venue: req.body.venue,
         location: req.body.location,
@@ -34,7 +34,8 @@ module.exports= {
         cloudinaryId: result.public_id,
         caption: req.body.caption,
         likes: 0,
-        user: req.user,
+        user: req.user.id,
+        createdAt: Date.now,
       });
       console.log("Event has been added!");
       res.redirect("/profile");
@@ -48,7 +49,7 @@ module.exports= {
       const comments = await Comment.find({ events: req.params.id })
         .sort({ createdAt: "desc" })
         .lean();
-      console.log(comments);
+     
       res.render("event.ejs", {
         event: event,
         comments: comments,

@@ -1,6 +1,7 @@
 <%- include('partials/header') -%>
 
-<div class="mt-5">
+<div class="m-48 px-64 py-24 bg-indigo-900 text-indigo-200 rounded-3xl">
+   <div class="container">
     <h2>Add an event:</h2>
     <p></p>
     <form action="/event/createEvent" enctype="multipart/form-data" method="POST">
@@ -9,19 +10,18 @@
           <input type="text" class="form-control" id="eventName" name="eventName">
        </div>
        <div class="mb-3">
-          <label for="fanName" class="form-label">Fan Name or Nickname (you choose!)</label>
-          <input type="text" class="form-control" id="fanName" name="fanName">
+          <label for="nickName" class="form-label">Fan Name or Nickname (you choose!)</label>
+          <input type="text" class="form-control" id="nickName" name="nickName">
        </div>
 
 
 
-       <div class="mb-3 dropdown dropdown-hover">
-          <label tabindex="0" class="btn m-1">Event Type:</label>
-          <ul tabindex="0" class="dropdown-content menu p-2 shadow rounded-box w-52 bg-white">
-            <li><a>Indoor</a></li>
-            <li><a>Outdoor</a></li>
-            <li><a>Theater</a></li>
-          </ul>
+       <div class="mb-3">
+          <label for="type" class="form-label">Event Type:</label>
+          <span>(indoor, outdoor, theater)</span>
+          <input type="text" class="form-control" id="type" name="type">
+         
+        
         </div>
 
        <div class="mb-3">
@@ -56,5 +56,6 @@
        </form>
  </div>
 </div>
+</div> 
 
 <%- include('partials/footer') -%>
