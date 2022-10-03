@@ -1,3 +1,4 @@
+
 const mongoose = require("mongoose");
 
 const EventSchema = new mongoose.Schema({
@@ -5,9 +6,9 @@ const EventSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  nickname: {
+  nickName: {
     type: String,
-    required: false,
+    required: true,
   },
   type: {
     type: String,
@@ -19,11 +20,11 @@ const EventSchema = new mongoose.Schema({
   },
   location: {
     type: String,
-    required: true,
+    required: false,
   },
   setCount: {
     type: Number,
-    required: true,
+    required: false,
   },
   startDate: {
     type: Date,

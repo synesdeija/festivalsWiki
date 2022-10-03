@@ -10,12 +10,12 @@ module.exports = {
       console.log(err);
     }
   },
-  getFeed: async (_, res) => {
+  getFeed: async (req, res) => {
     //find all events, sort them by time-descending. event is our model. look at schema on model to see what each event created will have (like createdAt).
     try {
       const events = await Event.find().sort({ createdAt: "desc" }).lean();
 
-      res.render("feed.ejs", { events: events, user: req.user });
+      res.render("feed.ejs", {user: req.user, events: events });
     } catch (err) {
       console.log(err);
     }
