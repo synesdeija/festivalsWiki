@@ -27,15 +27,20 @@
    <h6 class="py-10 row justify-end">Attendees:
       <%=event.likes %>
    </h6>
+<!-- ability to delete comment -->
+
    <%if(event.user == user.id){ %>
       <form
-        action="/event/deleteEvent/<%= event.id %>?_method=DELETE"
+        action="/event/deleteComment/<%= comments._id %>?_method=DELETE"
         method="POST"
         class="col-3"
       >
-        <button class="btn fa-sharp fa-solid fa-trash" style="color:rgb(99 102 241)" type="submit"></button>
+        <button class="btn fa-sharp fa-solid fa-trash" style="color:rgb(99 102 241)" type="submit">Delete Comment</button>
       </form>
       <%}%>
+
+
+
 </div>
 <div class="col-3 mt-5">
    <p><%= event.caption %></p>
@@ -49,7 +54,7 @@
             <button type="submit" class="btn fa-regular fa-comment-smile" style="color:rgb(99 102 241)"> Submit</button>
       </form>
       </div>
-   </div>
+   
    <div class="col-6">
       <ul class="row list-unstyled">
          <% for(var i=0; i<comments.length; i++) {%>
@@ -63,6 +68,7 @@
          </li>
          <% } %>
       </ul>
+   </div>
    </div>
    <div class="col-6 mt-5">
       <a class="btn fa-solid fa-head-side-brain" style="color:rgb(99 102 241)" href="/profile">Profile</a>
