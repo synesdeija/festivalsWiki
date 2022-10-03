@@ -1,30 +1,43 @@
-<%- include('partials/header') -%>
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+    <%- include('partials/head'); %>
+</head>
+<body>
+    <header>
+    <%- include('partials/header'); %>
+</header>
+<main>
+
+   <div class="container">
    <div class="row justify-content-center mt-5">
       <ul class="row list-unstyled">
          <% for(let i=0; i<events.length; i++) {%>
          <li class="col-6 justify-content-between mt-5">
             <a href="/event/<%= events[i]._id%>">
                <!-- grabbed ID of event, plugged it into this href, then grab the image to show in the feed by grabbing the image property in the collection (the cloudinary link in the mongodb), and plugged it in as the source of the image.  -->
-               <img class="img-fluid" src="<%= events[i].image%>">
+               <img class="img-thumbnail" src="<%= events[i].image%>">
+               
             </a>
          </li>
+         
          <% } %>
-         <ul>
-            <% events.forEach((event)=> { %>
-                <li>
-                    <h2>
-                        <%= event.nickName %>
-                    </h2>
-                    <p>
-                        <%= event.eventName %>
-                    </p>
-                    <p> <%=event.type %></p>
-                </li>
-                <hr />
-            <% }) %>
+         <% events.forEach((event)=> { %> 
+            <li><%- event.eventName %> --
+            <%- event.venue %></li>
+                  <% }) %>
         </ul>
-      </ul>
+        <hr />
+        
    </div>
+</div>
+   </main>
 
-<%- include('partials/footer') -%>
+   <footer>
+
+      <%- include('partials/footer') %>
+      </footer>
+      
+      </body>
+      </html>

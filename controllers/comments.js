@@ -62,12 +62,16 @@ module.exports = {
     try {
       // Find comment by id
       let comment = await Comment.findById({ _id: req.params.id });
+      console.log(comment)
+      // FInd post by id
+      let event = await Event.findById({ _id: comment.event});
+      console.log(event);
       // Delete comment from db
-      await Comment.findOneAndDelete({ _id: req.params.id });
+      await Comment.delete({ _id: req.params.id });
       console.log("Deleted Comment");
-      res.redirect("/event/" + req.params.id);
+      res.redirect(`/event/${event._id}`);
     } catch (err) {
-      res.redirect("/event/" + req.params.id);
+        console.log(err);
     }
   },
 };
