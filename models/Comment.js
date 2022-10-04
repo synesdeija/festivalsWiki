@@ -9,18 +9,18 @@ const CommentSchema = new mongoose.Schema({
     type: Number,
     required: true,
   },
-  events: {
+  event: {
     type: mongoose.Schema.Types.ObjectId,
-    ref: "Events",
+    ref: "Event",
   },
   createdAt: {
     type: Date,
     default: Date.now,
   },
-  user: {
-    type: mongoose.Schema.Types.ObjectId,
-    ref: "User",
-  },
+  // user: {
+  //   type: mongoose.Schema.Types.ObjectId,
+  //   ref: "User",
+  // },
 });
 
 module.exports = mongoose.model("Comment", CommentSchema);

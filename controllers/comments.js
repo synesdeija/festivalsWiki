@@ -1,39 +1,19 @@
 const Event = require("../models/Event");
 const Comment = require("../models/Comment");
 const commentsController = require("../controllers/comments");
-module.exports = {
-  getProfile: async (req, res) => {
-    try {
-      const event = await Event.find({ user: req.user.id });
-      res.render("profile.ejs", { events: event, user: req.user });
-    } catch (err) {
-      console.log(err);
-    }
-  },
 
-  getEvent: async (req, res) => {
-    try {
-      const event = await Event.findById(req.params.id);
-      console.log(event);
-      const comment = await Comment.findById({ event: req.params.id })
-        .sort({ createdAt: "desc" })
-        .lean();
-      res.render("event.ejs", {
-        events: event,
-        comments: comment,
-        user: req.user,
-      });
-    } catch (err) {
-      console.log(err);
-    }
-  },
+
+
+module.exports = {
+  
 
   createComment: async (req, res) => {
     try {
       await Comment.create({
         comment: req.body.comment,
         likes: 0,
-        events: req.params.id,
+        event: req.params.id,
+        user: req.user,
       });
       console.log("Comment has been added!");
       res.redirect("/event/" + req.params.id);
@@ -64,12 +44,12 @@ module.exports = {
       let comment = await Comment.findById({ _id: req.params.id });
       console.log(comment)
       // FInd post by id
-      let event = await Event.findById({ _id: comment.event});
+      let event = await Event.findById({ _id: req.params.id });
       console.log(event);
       // Delete comment from db
-      await Comment.delete({ _id: req.params.id });
+      await Comment.findOneAndDelete({ _id: req.params.id });
       console.log("Deleted Comment");
-      res.redirect(`/event/${event._id}`);
+      res.redirect(`/event/${req.params.eventId}`);
     } catch (err) {
         console.log(err);
     }
