@@ -5,8 +5,6 @@ const commentsController = require("../controllers/comments");
 
 
 module.exports = {
-  
-
   createComment: async (req, res) => {
     try {
       await Comment.create({
@@ -42,14 +40,12 @@ module.exports = {
     try {
       // Find comment by id
       let comment = await Comment.findById({ _id: req.params.id });
+      let event = comment.event
       console.log(comment)
-      // FInd post by id
-      let event = await Event.findById({ _id: req.params.id });
-      console.log(event);
       // Delete comment from db
       await Comment.findOneAndDelete({ _id: req.params.id });
       console.log("Deleted Comment");
-      res.redirect(`/event/${req.params.eventId}`);
+      res.redirect(`/event/${event._id}`);
     } catch (err) {
         console.log(err);
     }
