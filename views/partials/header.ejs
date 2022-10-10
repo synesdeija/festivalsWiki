@@ -3,25 +3,35 @@
 
    <!-- NAVBAR -->
    <div class="container">
-   <div class="navbar-center bg-indigo-100 justify-content-center rounded-3xl p-2">
+   <div class="navbar justify-content-between bg-gray-300 rounded-3xl ">
    
-    <a href="https://en.wikipedia.org/wiki/David_Tipper">
+    <a href="https://en.wikipedia.org/wiki/David_Tipper" class="no-underline">
         
-        <i alt="link to Dave Tipper wikipedia" class="fa-solid fa-block-question fa-2xl ml-6 mr-12" style="color:rgb(99, 102, 241)"></a></i>
+        <i alt="link to Dave Tipper wikipedia" class="no-underline pr-5 fa-solid fa-block-question fa-2xl" style="color:rgb(99, 102, 241)"></i>
+    </a>
         
-        <div class="text-indigo-800 font-extrabold xl:inline text-xl mr-48">Festivals Wiki</div>
+        <a href="/" class="no-underline text-indigo-800 font-extrabold xl:inline text-xl">Festivals Wiki</a>
+        
 
     
-        <a href="/profile" class="px-3 py-2 rounded-md text-sm font-medium text-indigo-600 hover:text-indigo-500">Profile</a>
-        <a href="/feed" class="px-3 py-2 rounded-md text-sm font-medium text-indigo-600 hover:text-indigo-500">Events Library</a>
-        <a href="/event/createEvent" class="px-3 py-2 rounded-md text-sm font-medium text-indigo-600 hover:text-indigo-500">Add an Event</a>
-        <% if (user) { %>
-          <a href="/logout" class="px-3 py-2 rounded-md text-sm font-medium text-indigo-600 hover:text-indigo-500">Logout</a>
+    <% if (user) { %>
+      
+        <a href="/profile" class="text-sm font-medium text-indigo-600 hover:text-indigo-500">Profile</a>
+
+        <a href="/feed" class="text-sm font-medium text-indigo-600 hover:text-indigo-500">Events Library</a>
+        
+          <a href="/event/createEvent" class="text-sm font-medium text-indigo-600 hover:text-indigo-500">Add an Event</a>
+
+          <a href="/logout" class="text-sm font-medium text-indigo-600 hover:text-indigo-500">Logout</a>
+
         <%} else { %>
-          <a href="/login" class="px-3 py-2 rounded-md text-sm font-medium text-indigo-600 hover:text-indigo-500">Login</a>
-          <a href="/signup" class="px-3 py-2 rounded-md text-sm font-medium text-indigo-600 hover:text-indigo-500">Sign Up</a>
+
+          <a href="/login" class="text-sm font-medium text-indigo-600 hover:text-indigo-500">Login</a>
+
+          <a href="/signup" class="text-sm font-medium text-indigo-600 hover:text-indigo-500">Sign Up</a>
+
         <% } %>
-      </div>
+      
   </div>
 </div>
 <!-- NAVBAR END -->
