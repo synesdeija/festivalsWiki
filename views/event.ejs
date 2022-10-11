@@ -56,21 +56,21 @@
   
    <ul class="list-disc">
       <li>
-         <%- event.type %>
+        type: <%- event.type %>
       </li>
       <li>
-         <%- event.venue %>
+        venue: <%- event.venue %>
       </li>
       <li>
-      <%- event.location %>
+      location: <%- event.location %>
       </li>
-      <li>Set Count: 
+      <li>set count: 
       <%- event.setCount %>
       </li>
-      <li>Started on:
+      <li>began:
             <%- event.startDate.toDateString() %>
             </li>
-            <li>Ended on:
+            <li>ended:
             <%- event.endDate.toDateString() %>
             </li>
          
@@ -98,6 +98,8 @@
          <li class="divider font-bold col-6 justify-content-between mt-5">
            <%=user.userName.toUpperCase() %>: <%= comments[i].comment %>
          </li>
+
+
          <!-- ability to delete comment -->
             <%if(comments[i].user == user.id){ %>
                
@@ -112,9 +114,10 @@
       </ul>
    </div>
    </div>
-   <div class="col-6 mt-5">
-      <a class="btn fa-solid fa-head-side-brain" style="color:rgb(99 102 241)" href="/profile">Profile</a>
-      <a class="btn fa-regular fa-album-collection" style="color:rgb(99 102 241)" href="/feed">Library</a>
+   <div class="pl-20">
+      <a class="btn fa-solid fa-head-side-brain" style="color:rgb(99 102 241)" href="/profile"> Profile</a>
+      <a class="btn fa-regular fa-album-collection" style="color:rgb(99 102 241)" href="/feed"> Library</a>
+    
    </div>
 </div>
 
