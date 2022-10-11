@@ -11,28 +11,25 @@
 <main>
 
 
-  <div class="flex flex-col w-50 lg:flex-row">
+  <div class="flex lg:flex-row">
 
    <div class="grid flex-grow img-fluid card bg-base-300 rounded-box place-items-center">
-      <ul>
+      <ul class="p-4">
          <% for(let i=0; i<events.length; i++) {%>
-      <li class="row-list-unstyled">
+
        
          <a href="/event/<%= events[i]._id%>">
-      <img class="img-fluid justify-center m-5" src="<%= events[i].image%>">
-      <span>  <%= events[i].venue %>   </span>
+      <img class="object-scale-down h-96 w-180 p-4" src="<%= events[i].image%>">  </a>
+      <span class="p-4 font-bold "> Location: <%= events[i].venue %>   </span>
       <div class="divider lg:divider-horizontal">
    
       </div>
-   </a>
-      
-      <% events.forEach((event)=> { %> 
+  
 
-        <% }) %> 
       </ul>
       
 <%}%>
-</li>                 
+                 
 </div>
 </div>    
 
