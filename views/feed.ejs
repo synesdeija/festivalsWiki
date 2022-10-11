@@ -10,28 +10,29 @@
 </header>
 <main>
 
-   <div class="container">
-   <div class="row justify-content-center mt-5">
-      <ul class="row list-unstyled">
-         <% for(let i=0; i<events.length; i++) {%>
-         <li class="col-6 justify-content-between mt-5">
-            <a href="/event/<%= events[i]._id%>">
-               <!-- grabbed ID of event, plugged it into this href, then grab the image to show in the feed by grabbing the image property in the collection (the cloudinary link in the mongodb), and plugged it in as the source of the image.  -->
-               <img class="img-thumbnail" src="<%= events[i].image%>">
-               
-            </a>
-         </li>
-         
+  <div class="container">
+   <% for(let i=0; i<events.length; i++) { %>
+   <div class="flex items-center m-2 p-2">
+      
+         <a href="/event/<%= events[i]._id%>">
+      <img class="w-24 mr-8" src="<%= events[i].image%>"/>
+         </a>
+      <div>
+        <h3 class="text-3xl text-gray-900" src="<%= events[i].eventName %>"></h3>
+        <p class="text-lg text-gray-700">
          <% } %>
          <% events.forEach((event)=> { %> 
-            <li><%- event.eventName %> --
-            <%- event.venue %></li>
-                  <% }) %>
-        </ul>
-        <hr />
-        
+            <li>
+               <%- event.nickName %> --
+               <%- event.venue %>      
+            </li>
+
+         <% }) %>
+        </p>
+      </div>
+      
+    </div>
    </div>
-</div>
    </main>
 
    <footer>
