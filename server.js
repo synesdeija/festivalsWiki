@@ -24,6 +24,10 @@ connectDB();
 //Using EJS for views
 app.set("view engine", "ejs");
 
+//Using EJS-Lint
+const ejsLint = require('ejs-lint');
+
+
 //Static Folder
 app.use(express.static("public"));
 
