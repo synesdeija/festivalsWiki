@@ -5,17 +5,17 @@
     <%- include('partials/head'); %>
 </head>
 
-<body class = "container">
    <header>
    <%- include('partials/header'); %>
-</header>
-<main>
+   </header>
 
-<div class="mx-48 my-6 px-64 py-24 bg-indigo-900 text-indigo-200 rounded-3xl">
+<main>
    <div class="container">
-    <h2>Add an event:</h2>
-    <p></p>
-    <form action="/event/createEvent" enctype="multipart/form-data" method="POST">
+      <div class="px-10 py-14 bg-indigo-900 text-indigo-200 rounded-3xl">
+
+         <h2>Add an event:</h2>
+    
+            <form action="/event/createEvent" enctype="multipart/form-data" method="POST">
        <div class="mb-3">
           <label for="eventName" class="form-label">Official Event Name</label>
           <input type="text" class="form-control" id="eventName" name="eventName">
@@ -44,7 +44,7 @@
           <input type="text" class="form-control" id="location" name="location">
        </div>
        <div class="mb-3">
-          <label for="setCount" class="form-label">Set Count (how many sets did Dave play? how many did you actually catch?)</label>
+          <label for="setCount" class="form-label">Set Count (...if you can count 'em!)</label>
           <input type="text" class="form-control" id="setCount" name="setCount">
        </div>
        <div class="mb-3">
@@ -77,5 +77,5 @@
 <%- include('partials/footer') %>
 </footer>
 
-</body>
+
 </html>
