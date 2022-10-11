@@ -23,7 +23,7 @@ const EventSchema = new mongoose.Schema({
     required: false,
   },
   setCount: {
-    type: Number,
+    type: String,
     required: false,
   },
   startDate: {
