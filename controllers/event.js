@@ -2,7 +2,7 @@
 const cloudinary = require("../middleware/cloudinary");
 const Event = require("../models/Event");
 const Comment = require("../models/Comment");
-// const path=require("path");
+
 
 
 module.exports= {
