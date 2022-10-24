@@ -35,7 +35,7 @@
          <%if(event.user == user.id){ %>
             <form action="/event/deleteEvent/<%= event.id %>?_method=DELETE" method="POST">
       
-               <button class="btn btn-outline py-2 fa-sharp fa-solid fa-trash" style="color:rgb(99 102 241)" type="submit"></button>
+               <button class="btn btn-outline py-2 fa-sharp fa-solid fa-trash" style="color:rgb(61 41 222)" type="submit"></button>
             </form>
            
             <%}%>
@@ -46,7 +46,7 @@
    <div class="col-sm-4">
       <div class="well">
       <form action="/event/likeEvent/<%= event.id %>?_method=PUT" method="POST">
-         <button class="btn py-2 fa-regular fa-hand-heart fa-xl" style="color:rgb(99 102 241)" type="submit">Went?</button>
+         <button class="btn py-2 fa-regular fa-hand-heart fa-xl" style="color:rgb(61 41 222)" type="submit">Went?</button>
       </form>
   
       
@@ -86,7 +86,7 @@
          <div class="mb-3 mx-24">
             <label for="comment" class="form-label"></label>
             <input type="text" class="form-control justify-start" id="comment" name="comment">
-            <button type="submit" class="btn fa-regular fa-comment-smile" style="color:rgb(99 102 241)"> Submit</button>
+            <button type="submit" class="btn fa-regular fa-comment-smile" style="color:rgb(61 41 222)"> Submit</button>
       </form>
       </div>
    
@@ -105,7 +105,7 @@
         action="/comment/deleteComment/<%= comments[i]._id %>?_method=DELETE"
         method="POST"
         class="col-3">
-        <button class="btn fa-sharp fa-solid fa-trash" style="color:rgb(99 102 241)" type="submit">Delete</button>
+        <button class="btn fa-sharp fa-solid fa-trash" style="color:rgb(61 41 222)" type="submit">Delete</button>
       </form>
       <%}%>
          <% } %>
@@ -113,8 +113,8 @@
    </div>
    </div>
    <div class="mt-5 pl-16">
-      <a class="btn fa-solid fa-head-side-brain" style="color:rgb(99 102 241)" href="/profile"> Profile</a>
-      <a class="btn fa-regular fa-album-collection" style="color:rgb(99 102 241)" href="/feed"> Library</a>
+      <a class="btn fa-solid fa-head-side-brain" style="color:rgb(61 41 222)" href="/profile"> Profile</a>
+      <a class="btn fa-regular fa-album-collection" style="color:rgb(61 41 222)" href="/feed"> Library</a>
    </div>
 </div>
 

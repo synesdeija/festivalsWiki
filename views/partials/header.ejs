@@ -10,25 +10,27 @@
         <i alt="link to Dave Tipper wikipedia" class="no-underline pr-5 fa-solid fa-block-question fa-2xl" style="color:rgb(99, 102, 241)"></i>
     </a>
         
-        <a href="/" class="no-underline text-indigo-800 font-extrabold xl:inline text-xl">Festivals Wiki</a>
+        <a href="/" class="no-underline text-indigo-800 font-mono font-semibold xl:inline text-xl"> Festivals Wiki </a>
         
 
     
     <% if (user) { %>
       
-        <a href="/profile" class="text-sm font-medium text-indigo-600 hover:text-indigo-500">Profile</a>
+          <a class="btn fa-solid fa-head-side-brain" style="color:rgb(61 41 222)" href="/profile"> Profile</a>
 
-        <a href="/feed" class="text-sm font-medium text-indigo-600 hover:text-indigo-500">Events Library</a>
+          <a class="btn fa-regular fa-album-collection" style="color:rgb(61 41 222)" href="/feed"> Library</a>
         
-          <a href="/event/createEvent" class="text-sm font-medium text-indigo-600 hover:text-indigo-500">Add an Event</a>
+          <a class="btn fa-regular fa-puzzle" style="color:rgb(61 41 222)" href="/event/createEvent"> Contribute</a>
 
-          <a href="/logout" class="text-sm font-medium text-indigo-600 hover:text-indigo-500">Logout</a>
+          <a class="btn fa-solid fa-person-through-window" style="color:rgb(61 41 222)" href="/logout"> Logout</a>
 
         <%} else { %>
 
-          <a href="/login" class="text-sm font-medium text-indigo-600 hover:text-indigo-500">Login</a>
+          <a class="btn fa-regular fa-face-disguise font-bold" style="color:rgb(61 41 222)" href="/signup"> Join</a>
 
-          <a href="/signup" class="text-sm font-medium text-indigo-600 hover:text-indigo-500">Sign Up</a>
+          <a class="btn fa-thin fa-person-to-portal" style="color:rgb(61 41 222)" href="/login"> Login</a>
+
+          
 
         <% } %>
       
