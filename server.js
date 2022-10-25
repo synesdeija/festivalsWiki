@@ -69,10 +69,7 @@ app.use(passport.session());
 //Use flash messages for errors, info, ect...
 app.use(flash());
 
-//Handling non-matching request from client (404!)
-app.use ((req, res, next) => {
-  res.status(404).render("404.ejs")
-});
+
 
 //Setup Routes For Which The Server Is Listening
 app.use("/", mainRoutes);
@@ -83,5 +80,10 @@ app.use("/comment", commentRoutes);
 app.listen(process.env.PORT, () => {
   console.log("Server is running, you better catch it!");
 
+});
+
+//Handling non-matching request from client (404!)
+app.use ((req, res) => {
+  res.status(404).render("404.ejs")
 });
 
