@@ -4,7 +4,6 @@
 <head>
     <%- include('partials/head'); %>
 </head>
-<body class = "container">
     <header>
     <%- include('partials/header'); %>
 </header>
@@ -17,6 +16,8 @@
             messages.info.forEach( el => { %>
          <div class="alert alert-info"><%= el.msg %></div>
          <% }) %> <% } %>
+
+         <div class="p-1 font-normal text-center container bg-indigo-900 text-indigo-200 rounded-3xl font-mono">
          <form action="/login" method="POST">
             <div class="mb-3">
                <label for="exampleInputEmail1" class="form-label"
@@ -39,8 +40,9 @@
                   name="password"
                   />
             </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="submit" class="btn bg-white fa-sharp fa-door-open" style="color:rgb(61 41 222) ">Submit</button>
          </form>
+      </div>
       </section>
    </div>
 </main>
@@ -48,6 +50,5 @@
 
    <%- include('partials/footer') %>
    </footer>
-   
-   </body>
+
    </html>
