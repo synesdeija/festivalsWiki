@@ -25,7 +25,7 @@ connectDB();
 app.set("view engine", "ejs");
 
 //Using EJS-Lint
-const ejsLint = require('ejs-lint');
+const ejsLint = import('ejs-lint');
 
 
 //Static Folder
