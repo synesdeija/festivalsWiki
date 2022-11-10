@@ -70,7 +70,6 @@ app.use(passport.session());
 app.use(flash());
 
 
-
 //Setup Routes For Which The Server Is Listening
 app.use("/", mainRoutes);
 app.use("/event", eventRoutes);
@@ -83,6 +82,9 @@ app.listen(process.env.PORT, () => {
 });
 
 //Handling non-matching request from client (404!)
-app.use ((req, res, next) => {
+
+app.use ((req, res) => {
   res.status(404).render("404.ejs")
 });
+
+
