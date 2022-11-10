@@ -11,49 +11,48 @@
 <main>
 <div class="container">
 
-<div class="row">
-<div class="col-sm-8">
-   <div class="jumbotron mt-12"></div>
-   <h2>
-      <%=event.eventName %>
-   </h2>
 
-      <h4>"<%=event.nickName %>"
-      </h4>
-   
+   <div class="grid grid-cols-2 gap-2 my-3 flex-1 border-2 border-indigo-700 rounded-lg">
+      <div class="justify-end">
+         <h2 class="pt-1">
+            <%=event.eventName %>
+         </h2>
+
+         <h4 class="pt-2"> or... "<%=event.nickName %>"
+         </h4>
+      </div>
+      <span class="justify-end pt-2"> Attendees:
+         <%=event.likes %> 
+         
+         <form action="/event/likeEvent/<%= event.id %>?_method=PUT" method="POST">
+            <button class="btn py-2 fa-regular fa-hand-heart fa-xl" style="color:rgb(61 41 222)" type="submit">Went?</button>
+         </form>
+         </span>
+         </div>
    <img class="img-fluid justify-center" src="<%= event.image%>" />
 
-   <span class="justify-center font-bold text-sm">
-     Caption: "<%= event.caption %>"
-     <br>     
+
+   <!-- end image and begin caption, delete, and attendees -->
+<div class="flex justify-between">
+   <span class="pt-2 font-semibold">
+      
+      Contributor caption: "<%= event.caption %>"
+     </span>  
+
+   <%if(event.user == user.id){ %>
+      <form action="/event/deleteEvent/<%= event.id %>?_method=DELETE" method="POST">
+
+         <button class="btn btn-outline fa-regular fa-trash" style="color:rgb(61 41 222)" type="submit">  delete your contribution</button>
+      </form>
      
-     <span> Attendees:
-         <%=event.likes %> 
+      <%}%>
+   </div>
 
       <br>
 
-         <%if(event.user == user.id){ %>
-            <form action="/event/deleteEvent/<%= event.id %>?_method=DELETE" method="POST">
-      
-               <button class="btn btn-outline py-2 fa-sharp fa-solid fa-trash" style="color:rgb(61 41 222)" type="submit"></button>
-            </form>
-           
-            <%}%>
-         </span>
-   </span>
+
 </div>
-</div>
-   <div class="col-sm-4">
-      <div class="well">
-      <form action="/event/likeEvent/<%= event.id %>?_method=PUT" method="POST">
-         <button class="btn py-2 fa-regular fa-hand-heart fa-xl" style="color:rgb(61 41 222)" type="submit">Went?</button>
-      </form>
-  
-      
-      
-   
- 
-  
+
    <ul class="list-disc">
       <li>
          <%- event.type %>
