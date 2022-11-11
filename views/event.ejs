@@ -51,33 +51,35 @@
       <br>
 
 
-</div>
 
-   <ul class="list-disc">
-      <li>
-         <%- event.type %>
-      </li>
-      <li>
-         <%- event.venue %>
-      </li>
-      <li>
-      <%- event.location %>
-      </li>
-      <li>Set Count: 
-      <%- event.setCount %>
-      </li>
-      <li>Started on:
-            <%- event.startDate.toDateString() %>
-            </li>
-            <li>Ended on:
-            <%- event.endDate.toDateString() %>
-            </li>
-         
-   </ul>
+
+<div class="p-8">
+<table class="text-center border-separate border-1 border-indigo-700 table-fixed">
+   <thead>
+      <tr>
+         <th class="font-bold p-2 border-b text-left">type</th>
+         <th class="font-bold p-2 border-b text-left">venue</th>
+         <th class="font-bold py-2 px-4 border-b text-left">location</th>
+         <th class="font-bold py-2 px-4 border-b text-left">set count</th>
+         <th class="font-bold py-2 px-4 border-b text-left">began</th>
+         <th class="font-bold py-2 px-4 border-b text-left">ended</th>
+      </tr>
+   </thead>
+   <tbody>
+      <tr class="odd:bg-gray-200">
+         <td class="p-2 border-b border-r text-left"><%- event.type %></td>
+         <td class="p-2 border-b border-r text-left"><%- event.venue %></td>
+         <td class="py-2 px-4 border-b border-r text-left"><%- event.location %></td>
+         <td class="py-2 px-4 border-b border-r text-left"><%- event.setCount %></td>
+         <td class="py-2 px-4 border-b border-r text-left"><%- event.startDate.toDateString() %></td>
+         <td class="py-2 px-4 border-b border-r text-left"><%- event.endDate.toDateString() %></td>
+      </tr>
+   </tbody>
+</table>
+</div>
    </div>
 </div>
    
-</main>
 
    <div class="container m-12">
       <h3>Leave a Comment: </h3>
@@ -116,6 +118,7 @@
       <a class="btn fa-regular fa-album-collection" style="color:rgb(61 41 222)" href="/feed"> Library</a>
    </div>
 </div>
+</main>
 
 
 <footer>
