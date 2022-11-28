@@ -13,7 +13,7 @@
   "license": "MIT",
   "dependencies": {
     "bcrypt": "^5.1.0",
-    "bootstrap": "^5.2.2",
+    "bootstrap": "^5.2.3",
     "cloudinary": "^1.32.0",
     "connect-mongo": "^4.6.0",
     "daisyui": "^2.41.0",
