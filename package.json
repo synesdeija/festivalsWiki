@@ -37,7 +37,6 @@
   },
   "devDependencies": {
     "autoprefixer": "^10.4.12",
- dependabot/npm_and_yarn/postcss-cli-10.1.0
     
     "postcss-cli": "^10.1.0",
     
@@ -45,7 +44,6 @@
     "postcss": "^8.4.20",
    
     "prettier": "2.8.1",
- main
     "tailwindcss": "^3.2.4"
   }
 }
