@@ -12,4 +12,4 @@
 
 # Documentation updates
 
-<!--were there any documentation updates? Let's call this out here to make the reviewer think. This can be removed if not applicable.-->
+<!--Were there any documentation updates? Let's call them out here to make the reviewer think. This can be removed if not applicable?-->
