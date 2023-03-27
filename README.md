@@ -18,6 +18,6 @@ Run the following commands in your terminal
 4. start the server with `npm start`
    - This will always start the server.
 
-### Subsequent run
+### Subsequent runs:
 
 Run steps 2 and 4.
